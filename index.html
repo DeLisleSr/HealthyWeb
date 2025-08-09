@@ -1,12 +1,61 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Ghost Page</title>
+    <title>Animated Health Foundation</title>
+    <style>
+        body {
+            /* This centers our container vertically and horizontally on the page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fallback background color */
+        }
+
+        .animated-container {
+            /* The main container for our content */
+            width: 100%;
+            height: 50vh; /* This sets the height to 50% of the screen height */
+            /* This is where we add the background GIF. The URL below is a placeholder. */
+            background-image: url('https://media.giphy.com/media/l4pTfx2qLsTgVpYul6/giphy.gif');
+            background-size: cover; /* This makes sure the GIF covers the entire container */
+            background-position: center;
+            display: flex; /* This helps center the text inside the container */
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for the pseudo-element overlay */
+            overflow: hidden; /* Ensures the GIF doesn't spill out */
+        }
+
+        .animated-container::before {
+            /* This is a semi-transparent black overlay to make the text more readable */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Black with 40% transparency */
+        }
+
+        .text-content {
+            /* Styles for the text itself */
+            color: white; /* White text for contrast */
+            font-family: sans-serif; /* A clean, modern font */
+            font-size: 5vw; /* This adjusts the font size based on the width of the screen */
+            text-align: center;
+            z-index: 1; /* This makes sure the text is on top of the overlay */
+            text-shadow: 2px 2px 4px #000000; /* Adds a fancy shadow effect */
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Hello, World!</h1>
-    <p>This is my first website. The foundation of a healthy future begins here.</p>
+    <div class="animated-container">
+        <div class="text-content">Foundations of Health</div>
+    </div>
 
 </body>
 </html>
